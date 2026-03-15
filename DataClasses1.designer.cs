@@ -30,6 +30,12 @@ namespace QLSV
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void Inserttbl_sinhvien(tbl_sinhvien instance);
+    partial void Updatetbl_sinhvien(tbl_sinhvien instance);
+    partial void Deletetbl_sinhvien(tbl_sinhvien instance);
+    partial void Inserttbl_lophoc(tbl_lophoc instance);
+    partial void Updatetbl_lophoc(tbl_lophoc instance);
+    partial void Deletetbl_lophoc(tbl_lophoc instance);
     #endregion
 		
 		public DataClasses1DataContext() : 
@@ -69,11 +75,21 @@ namespace QLSV
 				return this.GetTable<tbl_sinhvien>();
 			}
 		}
+		
+		public System.Data.Linq.Table<tbl_lophoc> tbl_lophocs
+		{
+			get
+			{
+				return this.GetTable<tbl_lophoc>();
+			}
+		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_sinhvien")]
-	public partial class tbl_sinhvien
+	public partial class tbl_sinhvien : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private string _id;
 		
@@ -85,11 +101,28 @@ namespace QLSV
 		
 		private string _malop;
 		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(string value);
+    partial void OnidChanged();
+    partial void OnhotenChanging(string value);
+    partial void OnhotenChanged();
+    partial void OngioitinhChanging(string value);
+    partial void OngioitinhChanged();
+    partial void OnngaysinhChanging(System.Nullable<System.DateTime> value);
+    partial void OnngaysinhChanged();
+    partial void OnmalopChanging(string value);
+    partial void OnmalopChanged();
+    #endregion
+		
 		public tbl_sinhvien()
 		{
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="NChar(10) NOT NULL", CanBeNull=false)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string id
 		{
 			get
@@ -100,7 +133,11 @@ namespace QLSV
 			{
 				if ((this._id != value))
 				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
 					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -116,7 +153,11 @@ namespace QLSV
 			{
 				if ((this._hoten != value))
 				{
+					this.OnhotenChanging(value);
+					this.SendPropertyChanging();
 					this._hoten = value;
+					this.SendPropertyChanged("hoten");
+					this.OnhotenChanged();
 				}
 			}
 		}
@@ -132,7 +173,11 @@ namespace QLSV
 			{
 				if ((this._gioitinh != value))
 				{
+					this.OngioitinhChanging(value);
+					this.SendPropertyChanging();
 					this._gioitinh = value;
+					this.SendPropertyChanged("gioitinh");
+					this.OngioitinhChanged();
 				}
 			}
 		}
@@ -148,7 +193,11 @@ namespace QLSV
 			{
 				if ((this._ngaysinh != value))
 				{
+					this.OnngaysinhChanging(value);
+					this.SendPropertyChanging();
 					this._ngaysinh = value;
+					this.SendPropertyChanged("ngaysinh");
+					this.OnngaysinhChanged();
 				}
 			}
 		}
@@ -164,8 +213,166 @@ namespace QLSV
 			{
 				if ((this._malop != value))
 				{
+					this.OnmalopChanging(value);
+					this.SendPropertyChanging();
 					this._malop = value;
+					this.SendPropertyChanged("malop");
+					this.OnmalopChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_lophoc")]
+	public partial class tbl_lophoc : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _malop;
+		
+		private string _monhoc;
+		
+		private string _giangvien;
+		
+		private System.Nullable<int> _siso;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnmalopChanging(string value);
+    partial void OnmalopChanged();
+    partial void OnmonhocChanging(string value);
+    partial void OnmonhocChanged();
+    partial void OngiangvienChanging(string value);
+    partial void OngiangvienChanged();
+    partial void OnsisoChanging(System.Nullable<int> value);
+    partial void OnsisoChanged();
+    #endregion
+		
+		public tbl_lophoc()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_malop", DbType="NChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string malop
+		{
+			get
+			{
+				return this._malop;
+			}
+			set
+			{
+				if ((this._malop != value))
+				{
+					this.OnmalopChanging(value);
+					this.SendPropertyChanging();
+					this._malop = value;
+					this.SendPropertyChanged("malop");
+					this.OnmalopChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_monhoc", DbType="NVarChar(50)")]
+		public string monhoc
+		{
+			get
+			{
+				return this._monhoc;
+			}
+			set
+			{
+				if ((this._monhoc != value))
+				{
+					this.OnmonhocChanging(value);
+					this.SendPropertyChanging();
+					this._monhoc = value;
+					this.SendPropertyChanged("monhoc");
+					this.OnmonhocChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_giangvien", DbType="NVarChar(50)")]
+		public string giangvien
+		{
+			get
+			{
+				return this._giangvien;
+			}
+			set
+			{
+				if ((this._giangvien != value))
+				{
+					this.OngiangvienChanging(value);
+					this.SendPropertyChanging();
+					this._giangvien = value;
+					this.SendPropertyChanged("giangvien");
+					this.OngiangvienChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_siso", DbType="Int")]
+		public System.Nullable<int> siso
+		{
+			get
+			{
+				return this._siso;
+			}
+			set
+			{
+				if ((this._siso != value))
+				{
+					this.OnsisoChanging(value);
+					this.SendPropertyChanging();
+					this._siso = value;
+					this.SendPropertyChanged("siso");
+					this.OnsisoChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

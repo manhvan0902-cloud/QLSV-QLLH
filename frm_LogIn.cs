@@ -26,6 +26,7 @@ namespace QLSV
                 frm_QLSV main = new frm_QLSV();
                 main.Show();
                 this.Hide();
+         
             }
             else
             {
