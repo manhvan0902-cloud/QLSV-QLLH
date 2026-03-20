@@ -183,7 +183,7 @@ namespace QLSV
             ClearForm();
         }
 
-        private void link_qlsv_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void btn_qlsv_Click(object sender, EventArgs e)
         {
             frm_QLSV main = new frm_QLSV();
             main.Show();

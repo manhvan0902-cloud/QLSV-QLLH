@@ -50,21 +50,22 @@
             this.btn_LamMoi = new System.Windows.Forms.Button();
             this.txt_GiangVien = new System.Windows.Forms.TextBox();
             this.btn_SignOut = new System.Windows.Forms.Button();
-            this.link_qlsv = new System.Windows.Forms.LinkLabel();
             this.btn_dssv = new System.Windows.Forms.Button();
             this.btn_previous = new System.Windows.Forms.Button();
             this.btn_next = new System.Windows.Forms.Button();
             this.page = new System.Windows.Forms.Label();
+            this.btn_qlsv = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLopHoc)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.Location = new System.Drawing.Point(320, 15);
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.lblTitle.Location = new System.Drawing.Point(306, 23);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(257, 37);
+            this.lblTitle.Size = new System.Drawing.Size(351, 50);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "QUẢN LÝ LỚP HỌC";
             // 
@@ -72,7 +73,7 @@
             // 
             this.lblSearch.AutoSize = true;
             this.lblSearch.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSearch.Location = new System.Drawing.Point(33, 70);
+            this.lblSearch.Location = new System.Drawing.Point(37, 94);
             this.lblSearch.Name = "lblSearch";
             this.lblSearch.Size = new System.Drawing.Size(91, 23);
             this.lblSearch.TabIndex = 1;
@@ -80,7 +81,7 @@
             // 
             // txt_Search
             // 
-            this.txt_Search.Location = new System.Drawing.Point(132, 65);
+            this.txt_Search.Location = new System.Drawing.Point(136, 89);
             this.txt_Search.Multiline = true;
             this.txt_Search.Name = "txt_Search";
             this.txt_Search.Size = new System.Drawing.Size(220, 32);
@@ -90,7 +91,7 @@
             // 
             this.btn_Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.btn_Search.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Search.Location = new System.Drawing.Point(379, 65);
+            this.btn_Search.Location = new System.Drawing.Point(383, 89);
             this.btn_Search.Name = "btn_Search";
             this.btn_Search.Size = new System.Drawing.Size(108, 32);
             this.btn_Search.TabIndex = 3;
@@ -101,13 +102,14 @@
             // dgvLopHoc
             // 
             this.dgvLopHoc.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvLopHoc.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.dgvLopHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLopHoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.malop,
             this.monhoc,
             this.giangvien,
             this.siso});
-            this.dgvLopHoc.Location = new System.Drawing.Point(34, 103);
+            this.dgvLopHoc.Location = new System.Drawing.Point(38, 127);
             this.dgvLopHoc.Name = "dgvLopHoc";
             this.dgvLopHoc.RowHeadersWidth = 51;
             this.dgvLopHoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -146,7 +148,7 @@
             // lblMaLop
             // 
             this.lblMaLop.AutoSize = true;
-            this.lblMaLop.Location = new System.Drawing.Point(115, 425);
+            this.lblMaLop.Location = new System.Drawing.Point(127, 458);
             this.lblMaLop.Name = "lblMaLop";
             this.lblMaLop.Size = new System.Drawing.Size(67, 23);
             this.lblMaLop.TabIndex = 5;
@@ -155,7 +157,7 @@
             // lblTenLop
             // 
             this.lblTenLop.AutoSize = true;
-            this.lblTenLop.Location = new System.Drawing.Point(115, 465);
+            this.lblTenLop.Location = new System.Drawing.Point(127, 498);
             this.lblTenLop.Name = "lblTenLop";
             this.lblTenLop.Size = new System.Drawing.Size(82, 23);
             this.lblTenLop.TabIndex = 6;
@@ -164,7 +166,7 @@
             // lblGVCN
             // 
             this.lblGVCN.AutoSize = true;
-            this.lblGVCN.Location = new System.Drawing.Point(515, 425);
+            this.lblGVCN.Location = new System.Drawing.Point(527, 458);
             this.lblGVCN.Name = "lblGVCN";
             this.lblGVCN.Size = new System.Drawing.Size(37, 23);
             this.lblGVCN.TabIndex = 7;
@@ -173,7 +175,7 @@
             // lblSiSo
             // 
             this.lblSiSo.AutoSize = true;
-            this.lblSiSo.Location = new System.Drawing.Point(515, 465);
+            this.lblSiSo.Location = new System.Drawing.Point(527, 498);
             this.lblSiSo.Name = "lblSiSo";
             this.lblSiSo.Size = new System.Drawing.Size(49, 23);
             this.lblSiSo.TabIndex = 8;
@@ -181,21 +183,22 @@
             // 
             // txt_MaLop
             // 
-            this.txt_MaLop.Location = new System.Drawing.Point(205, 420);
+            this.txt_MaLop.Location = new System.Drawing.Point(217, 453);
             this.txt_MaLop.Name = "txt_MaLop";
             this.txt_MaLop.Size = new System.Drawing.Size(200, 30);
             this.txt_MaLop.TabIndex = 9;
             // 
             // txt_MonHoc
             // 
-            this.txt_MonHoc.Location = new System.Drawing.Point(205, 460);
+            this.txt_MonHoc.Location = new System.Drawing.Point(217, 493);
             this.txt_MonHoc.Name = "txt_MonHoc";
             this.txt_MonHoc.Size = new System.Drawing.Size(200, 30);
             this.txt_MonHoc.TabIndex = 10;
             // 
             // txt_SiSo
             // 
-            this.txt_SiSo.Location = new System.Drawing.Point(575, 460);
+            this.txt_SiSo.BackColor = System.Drawing.SystemColors.Window;
+            this.txt_SiSo.Location = new System.Drawing.Point(587, 493);
             this.txt_SiSo.Name = "txt_SiSo";
             this.txt_SiSo.ReadOnly = true;
             this.txt_SiSo.Size = new System.Drawing.Size(200, 30);
@@ -205,9 +208,10 @@
             // 
             this.btn_Them.BackColor = System.Drawing.Color.DodgerBlue;
             this.btn_Them.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Them.Location = new System.Drawing.Point(243, 526);
+            this.btn_Them.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_Them.Location = new System.Drawing.Point(264, 546);
             this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(125, 35);
+            this.btn_Them.Size = new System.Drawing.Size(100, 35);
             this.btn_Them.TabIndex = 13;
             this.btn_Them.Text = "Thêm";
             this.btn_Them.UseVisualStyleBackColor = false;
@@ -217,9 +221,9 @@
             // 
             this.btn_Sua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btn_Sua.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Sua.Location = new System.Drawing.Point(388, 526);
+            this.btn_Sua.Location = new System.Drawing.Point(371, 546);
             this.btn_Sua.Name = "btn_Sua";
-            this.btn_Sua.Size = new System.Drawing.Size(125, 35);
+            this.btn_Sua.Size = new System.Drawing.Size(100, 35);
             this.btn_Sua.TabIndex = 14;
             this.btn_Sua.Text = "Sửa";
             this.btn_Sua.UseVisualStyleBackColor = false;
@@ -229,9 +233,9 @@
             // 
             this.btn_Xoa.BackColor = System.Drawing.Color.Red;
             this.btn_Xoa.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Xoa.Location = new System.Drawing.Point(529, 526);
+            this.btn_Xoa.Location = new System.Drawing.Point(477, 546);
             this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(125, 35);
+            this.btn_Xoa.Size = new System.Drawing.Size(100, 35);
             this.btn_Xoa.TabIndex = 15;
             this.btn_Xoa.Text = "Xóa";
             this.btn_Xoa.UseVisualStyleBackColor = false;
@@ -239,11 +243,11 @@
             // 
             // btn_LamMoi
             // 
-            this.btn_LamMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_LamMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(149)))), ((int)(((byte)(165)))), ((int)(((byte)(166)))));
             this.btn_LamMoi.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_LamMoi.Location = new System.Drawing.Point(265, 567);
+            this.btn_LamMoi.Location = new System.Drawing.Point(587, 546);
             this.btn_LamMoi.Name = "btn_LamMoi";
-            this.btn_LamMoi.Size = new System.Drawing.Size(175, 35);
+            this.btn_LamMoi.Size = new System.Drawing.Size(100, 35);
             this.btn_LamMoi.TabIndex = 16;
             this.btn_LamMoi.Text = "Làm mới";
             this.btn_LamMoi.UseVisualStyleBackColor = false;
@@ -251,7 +255,7 @@
             // 
             // txt_GiangVien
             // 
-            this.txt_GiangVien.Location = new System.Drawing.Point(575, 420);
+            this.txt_GiangVien.Location = new System.Drawing.Point(587, 453);
             this.txt_GiangVien.Name = "txt_GiangVien";
             this.txt_GiangVien.Size = new System.Drawing.Size(200, 30);
             this.txt_GiangVien.TabIndex = 11;
@@ -260,7 +264,7 @@
             // 
             this.btn_SignOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SignOut.ForeColor = System.Drawing.Color.Red;
-            this.btn_SignOut.Location = new System.Drawing.Point(756, 60);
+            this.btn_SignOut.Location = new System.Drawing.Point(760, 84);
             this.btn_SignOut.Name = "btn_SignOut";
             this.btn_SignOut.Size = new System.Drawing.Size(108, 33);
             this.btn_SignOut.TabIndex = 17;
@@ -268,25 +272,13 @@
             this.btn_SignOut.UseVisualStyleBackColor = true;
             this.btn_SignOut.Click += new System.EventHandler(this.btn_SignOut_Click);
             // 
-            // link_qlsv
-            // 
-            this.link_qlsv.AutoSize = true;
-            this.link_qlsv.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.link_qlsv.Location = new System.Drawing.Point(738, 372);
-            this.link_qlsv.Name = "link_qlsv";
-            this.link_qlsv.Size = new System.Drawing.Size(146, 23);
-            this.link_qlsv.TabIndex = 18;
-            this.link_qlsv.TabStop = true;
-            this.link_qlsv.Text = "Quản lý sinh viên";
-            this.link_qlsv.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_qlsv_LinkClicked);
-            // 
             // btn_dssv
             // 
             this.btn_dssv.BackColor = System.Drawing.Color.BurlyWood;
             this.btn_dssv.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btn_dssv.Location = new System.Drawing.Point(455, 568);
+            this.btn_dssv.Location = new System.Drawing.Point(477, 587);
             this.btn_dssv.Name = "btn_dssv";
-            this.btn_dssv.Size = new System.Drawing.Size(175, 35);
+            this.btn_dssv.Size = new System.Drawing.Size(207, 35);
             this.btn_dssv.TabIndex = 20;
             this.btn_dssv.Text = "Danh sách sinh viên";
             this.btn_dssv.UseVisualStyleBackColor = false;
@@ -296,7 +288,7 @@
             // 
             this.btn_previous.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_previous.ForeColor = System.Drawing.Color.DarkGray;
-            this.btn_previous.Location = new System.Drawing.Point(34, 375);
+            this.btn_previous.Location = new System.Drawing.Point(36, 397);
             this.btn_previous.Name = "btn_previous";
             this.btn_previous.Size = new System.Drawing.Size(35, 28);
             this.btn_previous.TabIndex = 23;
@@ -307,7 +299,7 @@
             // 
             this.btn_next.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_next.ForeColor = System.Drawing.Color.DarkGray;
-            this.btn_next.Location = new System.Drawing.Point(160, 375);
+            this.btn_next.Location = new System.Drawing.Point(162, 397);
             this.btn_next.Name = "btn_next";
             this.btn_next.Size = new System.Drawing.Size(38, 28);
             this.btn_next.TabIndex = 22;
@@ -318,21 +310,34 @@
             // 
             this.page.AutoSize = true;
             this.page.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.page.Location = new System.Drawing.Point(75, 385);
+            this.page.Location = new System.Drawing.Point(77, 407);
             this.page.Name = "page";
             this.page.Size = new System.Drawing.Size(79, 18);
             this.page.TabIndex = 21;
             this.page.Text = "Trang 1/1";
             // 
+            // btn_qlsv
+            // 
+            this.btn_qlsv.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btn_qlsv.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_qlsv.Location = new System.Drawing.Point(264, 587);
+            this.btn_qlsv.Name = "btn_qlsv";
+            this.btn_qlsv.Size = new System.Drawing.Size(207, 35);
+            this.btn_qlsv.TabIndex = 24;
+            this.btn_qlsv.Text = "Quản lý sinh viên";
+            this.btn_qlsv.UseVisualStyleBackColor = false;
+            this.btn_qlsv.Click += new System.EventHandler(this.btn_qlsv_Click);
+            // 
             // frm_QLLH
             // 
             this.AcceptButton = this.btn_Search;
-            this.ClientSize = new System.Drawing.Size(905, 627);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(245)))), ((int)(((byte)(249)))));
+            this.ClientSize = new System.Drawing.Size(905, 652);
+            this.Controls.Add(this.btn_qlsv);
             this.Controls.Add(this.btn_previous);
             this.Controls.Add(this.btn_next);
             this.Controls.Add(this.page);
             this.Controls.Add(this.btn_dssv);
-            this.Controls.Add(this.link_qlsv);
             this.Controls.Add(this.btn_SignOut);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblSearch);
@@ -389,10 +394,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn giangvien;
         private System.Windows.Forms.DataGridViewTextBoxColumn siso;
         private System.Windows.Forms.Button btn_SignOut;
-        private System.Windows.Forms.LinkLabel link_qlsv;
         private System.Windows.Forms.Button btn_dssv;
         private System.Windows.Forms.Button btn_previous;
         private System.Windows.Forms.Button btn_next;
         private System.Windows.Forms.Label page;
+        private System.Windows.Forms.Button btn_qlsv;
     }
 }

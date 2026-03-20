@@ -23,11 +23,11 @@ namespace QLSV
             LoadData();
             LoadComboBoxClass();
 
-            Add.Click += Add_Click_1;
-            Update.Click += Update_Click_1;
-            Delete.Click += Delete_Click_1;
-            searchhh.Click += searchhh_Click;
-            refreshhh.Click += refreshhh_Click;
+            Add.Click += Add_Click;
+            Update.Click += Update_Click;
+            Delete.Click += Delete_Click;
+            searchhh.Click += searchhh_Click_1;
+            refreshhh.Click += refreshhh_Click_1;
             dsSinhVien.CellClick += dsSinhVien_CellClick;
         }
 
@@ -72,7 +72,7 @@ namespace QLSV
         }
 
         //Thêm sinh viên
-        private void Add_Click_1(object sender, EventArgs e)
+        private void Add_Click(object sender, EventArgs e)
         {
             try
             {
@@ -99,7 +99,7 @@ namespace QLSV
         }
 
         //Sửa sinh viên
-        private void Update_Click_1(object sender, EventArgs e)
+        private void Update_Click(object sender, EventArgs e)
         {
             try
             {
@@ -127,7 +127,7 @@ namespace QLSV
         }
 
         //Xóa sinh viên
-        private void Delete_Click_1(object sender, EventArgs e)
+        private void Delete_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn xóa sinh viên này không?", "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -158,7 +158,7 @@ namespace QLSV
         }
 
         //Tìm kiếm
-        private void searchhh_Click(object sender, EventArgs e)
+        private void searchhh_Click_1(object sender, EventArgs e)
         {
             string key = txt_search.Text;
 
@@ -180,13 +180,13 @@ namespace QLSV
         }
 
         //Refresh
-        private void refreshhh_Click(object sender, EventArgs e)
+        private void refreshhh_Click_1(object sender, EventArgs e)
         {
             LoadData();
             ClearForm();
         }
 
-        private void link_qllh_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void btn_qllh_Click(object sender, EventArgs e)
         {
             frm_QLLH main = new frm_QLLH();
             main.Show();
@@ -194,7 +194,7 @@ namespace QLSV
         }
 
         //Đăng xuất 
-        private void btn_SignOut_Click(object sender, EventArgs e)
+        private void btn_SignOut_Click_1(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?", "Xác nhận đăng xuất",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -223,6 +223,5 @@ namespace QLSV
             txt_class.SelectedIndex = -1; 
             txt_class.Refresh();
         }
-
     }
 }
