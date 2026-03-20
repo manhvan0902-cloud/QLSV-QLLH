@@ -21,6 +21,7 @@ namespace QLSV
         {
             dsSinhVien.AutoGenerateColumns = false;
             LoadData();
+            LoadComboBoxClass();
 
             Add.Click += Add_Click_1;
             Update.Click += Update_Click_1;
@@ -50,7 +51,7 @@ namespace QLSV
         {
             txt_fullname.Clear();
             txt_number.Clear();
-            txt_class.Clear();
+            txt_class.SelectedIndex = -1;
             txt_gender.Clear();
             dtp_birthday.Value = DateTime.Now;
         }
@@ -80,7 +81,7 @@ namespace QLSV
                 sv.id = txt_number.Text;
                 sv.hoten = txt_fullname.Text;
                 sv.gioitinh = txt_gender.Text;
-                sv.malop = txt_class.Text;
+                sv.malop = txt_class.SelectedValue?.ToString();
                 sv.ngaysinh = DateTime.Parse(dtp_birthday.Text);
 
                 db.tbl_sinhviens.InsertOnSubmit(sv);
@@ -108,7 +109,7 @@ namespace QLSV
                 {
                     sv.hoten = txt_fullname.Text;
                     sv.gioitinh = txt_gender.Text;
-                    sv.malop = txt_class.Text;
+                    sv.malop = txt_class.SelectedValue?.ToString();
                     sv.ngaysinh = DateTime.Parse(dtp_birthday.Text);
 
                     db.SubmitChanges();
@@ -185,6 +186,43 @@ namespace QLSV
             ClearForm();
         }
 
+        private void link_qllh_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frm_QLLH main = new frm_QLLH();
+            main.Show();
+            this.Close();
+        }
+
+        //Đăng xuất 
+        private void btn_SignOut_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?", "Xác nhận đăng xuất",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dr == DialogResult.Yes)
+            {
+                Form1 loginForm = new Form1();
+                loginForm.Show();
+                this.Close();
+            }
+        }
+
+        // Load danh sách lớp học lên ComboBox
+        void LoadComboBoxClass()
+        {
+            var classList = from lh in db.tbl_lophocs
+                            select new
+                            {
+                                lh.malop,
+                                DisplayText = lh.malop
+                            };
+
+            txt_class.DataSource = classList.ToList();
+            txt_class.DisplayMember = "DisplayText"; 
+            txt_class.ValueMember = "malop"; 
+            txt_class.SelectedIndex = -1; 
+            txt_class.Refresh();
+        }
 
     }
 }

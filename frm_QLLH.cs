@@ -39,7 +39,7 @@ namespace QLSV
                          lh.malop,
                          lh.monhoc,
                          lh.giangvien,
-                         lh.siso
+                         siso = db.tbl_sinhviens.Count(sv => sv.malop == lh.malop)
                      };
             dgvLopHoc.DataSource = ds.ToList();
         }
@@ -80,7 +80,6 @@ namespace QLSV
                 lh.malop = txt_MaLop.Text;
                 lh.monhoc = txt_MonHoc.Text;
                 lh.giangvien = txt_GiangVien.Text;
-                lh.siso = int.Parse(txt_SiSo.Text);
 
 
                 db.tbl_lophocs.InsertOnSubmit(lh);
@@ -109,7 +108,7 @@ namespace QLSV
                     lh.malop = txt_MaLop.Text;
                     lh.monhoc = txt_MonHoc.Text;
                     lh.giangvien = txt_GiangVien.Text;
-                    lh.siso = int.Parse(txt_SiSo.Text);
+                 
 
                     db.SubmitChanges();
 
@@ -171,7 +170,7 @@ namespace QLSV
                       lh.malop,
                       lh.monhoc,
                       lh.giangvien,
-                      lh.siso
+                      siso = db.tbl_sinhviens.Count(sv => sv.malop == lh.malop),
                   });
 
             dgvLopHoc.DataSource = ds.ToList();
@@ -184,6 +183,43 @@ namespace QLSV
             ClearForm();
         }
 
+        private void link_qlsv_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frm_QLSV main = new frm_QLSV();
+            main.Show();
+            this.Close();
+        }
+
+        //Đăng xuất 
+        private void btn_SignOut_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Bạn có chắc chắn muốn đăng xuất?", "Xác nhận đăng xuất",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dr == DialogResult.Yes)
+            {
+                Form1 loginForm = new Form1();
+                loginForm.Show();
+                this.Close();
+            }
+        }
+
+        private void dgvLopHoc_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btn_dssv_Click(object sender, EventArgs e)
+        {
+            if(string.IsNullOrEmpty(txt_MaLop.Text))
+            {
+                MessageBox.Show("Vui lòng chọn 1 lớp học", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            frm_DSSV2 main = new frm_DSSV2(txt_MaLop.Text);
+            main.Show();
+            this.Close();
+        }
     }
 }
 

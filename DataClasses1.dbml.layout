@@ -2,17 +2,24 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses1">
   <DataContextMoniker Name="/DataClasses1DataContext" />
   <nestedChildShapes>
-    <classShape Id="7bdfe802-6d69-4ddf-a628-8a2e1fed2599" absoluteBounds="1, 1, 2, 1.7708968098958331">
-      <DataClassMoniker Name="/DataClasses1DataContext/tbl_sinhvien" />
-      <nestedChildShapes>
-        <elementListCompartment Id="3305835d-4eb4-43ad-9f9b-0d443906c6a5" absoluteBounds="1.0150000000000001, 1.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <classShape Id="84c0b9bc-ce03-4537-a182-a26deec42a04" absoluteBounds="3.875, 1.25, 2, 1.5785953776041666">
+    <classShape Id="4f2918fa-fb62-44cd-8e8e-4bdab2a1b28d" absoluteBounds="1.125, 1.375, 2, 1.5785953776041666">
       <DataClassMoniker Name="/DataClasses1DataContext/tbl_lophoc" />
       <nestedChildShapes>
-        <elementListCompartment Id="83bc4c1c-1c9a-4df4-a0b4-f692e3fc654f" absoluteBounds="3.8899999999999997, 1.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="1f84ef46-b88b-43b0-b90e-82df8b32fdb4" absoluteBounds="1.1400000000000001, 1.835, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="7bd44b00-2c14-4b97-9781-98a1b22f0a5f" absoluteBounds="4.625, 1.5, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DataClasses1DataContext/tbl_sinhvien" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f53dfde9-a1a6-4d0d-9996-afb06d736a2a" absoluteBounds="4.64, 1.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(3.125 : 2.22679768880208); (4.625 : 2.22679768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/tbl_lophoc/tbl_lophoc_tbl_sinhvien" />
+      <nodes>
+        <classShapeMoniker Id="4f2918fa-fb62-44cd-8e8e-4bdab2a1b28d" />
+        <classShapeMoniker Id="7bd44b00-2c14-4b97-9781-98a1b22f0a5f" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

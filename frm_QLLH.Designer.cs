@@ -49,6 +49,12 @@
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_LamMoi = new System.Windows.Forms.Button();
             this.txt_GiangVien = new System.Windows.Forms.TextBox();
+            this.btn_SignOut = new System.Windows.Forms.Button();
+            this.link_qlsv = new System.Windows.Forms.LinkLabel();
+            this.btn_dssv = new System.Windows.Forms.Button();
+            this.btn_previous = new System.Windows.Forms.Button();
+            this.btn_next = new System.Windows.Forms.Button();
+            this.page = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLopHoc)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,8 +111,9 @@
             this.dgvLopHoc.Name = "dgvLopHoc";
             this.dgvLopHoc.RowHeadersWidth = 51;
             this.dgvLopHoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLopHoc.Size = new System.Drawing.Size(830, 249);
+            this.dgvLopHoc.Size = new System.Drawing.Size(830, 266);
             this.dgvLopHoc.TabIndex = 4;
+            this.dgvLopHoc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLopHoc_CellContentClick);
             // 
             // malop
             // 
@@ -139,7 +146,7 @@
             // lblMaLop
             // 
             this.lblMaLop.AutoSize = true;
-            this.lblMaLop.Location = new System.Drawing.Point(114, 384);
+            this.lblMaLop.Location = new System.Drawing.Point(115, 425);
             this.lblMaLop.Name = "lblMaLop";
             this.lblMaLop.Size = new System.Drawing.Size(67, 23);
             this.lblMaLop.TabIndex = 5;
@@ -148,7 +155,7 @@
             // lblTenLop
             // 
             this.lblTenLop.AutoSize = true;
-            this.lblTenLop.Location = new System.Drawing.Point(114, 424);
+            this.lblTenLop.Location = new System.Drawing.Point(115, 465);
             this.lblTenLop.Name = "lblTenLop";
             this.lblTenLop.Size = new System.Drawing.Size(82, 23);
             this.lblTenLop.TabIndex = 6;
@@ -157,7 +164,7 @@
             // lblGVCN
             // 
             this.lblGVCN.AutoSize = true;
-            this.lblGVCN.Location = new System.Drawing.Point(514, 384);
+            this.lblGVCN.Location = new System.Drawing.Point(515, 425);
             this.lblGVCN.Name = "lblGVCN";
             this.lblGVCN.Size = new System.Drawing.Size(37, 23);
             this.lblGVCN.TabIndex = 7;
@@ -166,7 +173,7 @@
             // lblSiSo
             // 
             this.lblSiSo.AutoSize = true;
-            this.lblSiSo.Location = new System.Drawing.Point(514, 424);
+            this.lblSiSo.Location = new System.Drawing.Point(515, 465);
             this.lblSiSo.Name = "lblSiSo";
             this.lblSiSo.Size = new System.Drawing.Size(49, 23);
             this.lblSiSo.TabIndex = 8;
@@ -174,22 +181,23 @@
             // 
             // txt_MaLop
             // 
-            this.txt_MaLop.Location = new System.Drawing.Point(204, 379);
+            this.txt_MaLop.Location = new System.Drawing.Point(205, 420);
             this.txt_MaLop.Name = "txt_MaLop";
-            this.txt_MaLop.Size = new System.Drawing.Size(180, 30);
+            this.txt_MaLop.Size = new System.Drawing.Size(200, 30);
             this.txt_MaLop.TabIndex = 9;
             // 
             // txt_MonHoc
             // 
-            this.txt_MonHoc.Location = new System.Drawing.Point(204, 419);
+            this.txt_MonHoc.Location = new System.Drawing.Point(205, 460);
             this.txt_MonHoc.Name = "txt_MonHoc";
-            this.txt_MonHoc.Size = new System.Drawing.Size(180, 30);
+            this.txt_MonHoc.Size = new System.Drawing.Size(200, 30);
             this.txt_MonHoc.TabIndex = 10;
             // 
             // txt_SiSo
             // 
-            this.txt_SiSo.Location = new System.Drawing.Point(574, 419);
+            this.txt_SiSo.Location = new System.Drawing.Point(575, 460);
             this.txt_SiSo.Name = "txt_SiSo";
+            this.txt_SiSo.ReadOnly = true;
             this.txt_SiSo.Size = new System.Drawing.Size(200, 30);
             this.txt_SiSo.TabIndex = 11;
             // 
@@ -197,7 +205,7 @@
             // 
             this.btn_Them.BackColor = System.Drawing.Color.DodgerBlue;
             this.btn_Them.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Them.Location = new System.Drawing.Point(180, 469);
+            this.btn_Them.Location = new System.Drawing.Point(243, 526);
             this.btn_Them.Name = "btn_Them";
             this.btn_Them.Size = new System.Drawing.Size(125, 35);
             this.btn_Them.TabIndex = 13;
@@ -209,7 +217,7 @@
             // 
             this.btn_Sua.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btn_Sua.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Sua.Location = new System.Drawing.Point(325, 469);
+            this.btn_Sua.Location = new System.Drawing.Point(388, 526);
             this.btn_Sua.Name = "btn_Sua";
             this.btn_Sua.Size = new System.Drawing.Size(125, 35);
             this.btn_Sua.TabIndex = 14;
@@ -221,7 +229,7 @@
             // 
             this.btn_Xoa.BackColor = System.Drawing.Color.Red;
             this.btn_Xoa.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Xoa.Location = new System.Drawing.Point(466, 469);
+            this.btn_Xoa.Location = new System.Drawing.Point(529, 526);
             this.btn_Xoa.Name = "btn_Xoa";
             this.btn_Xoa.Size = new System.Drawing.Size(125, 35);
             this.btn_Xoa.TabIndex = 15;
@@ -233,9 +241,9 @@
             // 
             this.btn_LamMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btn_LamMoi.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_LamMoi.Location = new System.Drawing.Point(607, 469);
+            this.btn_LamMoi.Location = new System.Drawing.Point(265, 567);
             this.btn_LamMoi.Name = "btn_LamMoi";
-            this.btn_LamMoi.Size = new System.Drawing.Size(125, 35);
+            this.btn_LamMoi.Size = new System.Drawing.Size(175, 35);
             this.btn_LamMoi.TabIndex = 16;
             this.btn_LamMoi.Text = "Làm mới";
             this.btn_LamMoi.UseVisualStyleBackColor = false;
@@ -243,15 +251,89 @@
             // 
             // txt_GiangVien
             // 
-            this.txt_GiangVien.Location = new System.Drawing.Point(574, 379);
+            this.txt_GiangVien.Location = new System.Drawing.Point(575, 420);
             this.txt_GiangVien.Name = "txt_GiangVien";
             this.txt_GiangVien.Size = new System.Drawing.Size(200, 30);
             this.txt_GiangVien.TabIndex = 11;
             // 
+            // btn_SignOut
+            // 
+            this.btn_SignOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SignOut.ForeColor = System.Drawing.Color.Red;
+            this.btn_SignOut.Location = new System.Drawing.Point(756, 60);
+            this.btn_SignOut.Name = "btn_SignOut";
+            this.btn_SignOut.Size = new System.Drawing.Size(108, 33);
+            this.btn_SignOut.TabIndex = 17;
+            this.btn_SignOut.Text = "Đăng Xuất";
+            this.btn_SignOut.UseVisualStyleBackColor = true;
+            this.btn_SignOut.Click += new System.EventHandler(this.btn_SignOut_Click);
+            // 
+            // link_qlsv
+            // 
+            this.link_qlsv.AutoSize = true;
+            this.link_qlsv.Font = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.link_qlsv.Location = new System.Drawing.Point(738, 372);
+            this.link_qlsv.Name = "link_qlsv";
+            this.link_qlsv.Size = new System.Drawing.Size(146, 23);
+            this.link_qlsv.TabIndex = 18;
+            this.link_qlsv.TabStop = true;
+            this.link_qlsv.Text = "Quản lý sinh viên";
+            this.link_qlsv.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_qlsv_LinkClicked);
+            // 
+            // btn_dssv
+            // 
+            this.btn_dssv.BackColor = System.Drawing.Color.BurlyWood;
+            this.btn_dssv.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_dssv.Location = new System.Drawing.Point(455, 568);
+            this.btn_dssv.Name = "btn_dssv";
+            this.btn_dssv.Size = new System.Drawing.Size(175, 35);
+            this.btn_dssv.TabIndex = 20;
+            this.btn_dssv.Text = "Danh sách sinh viên";
+            this.btn_dssv.UseVisualStyleBackColor = false;
+            this.btn_dssv.Click += new System.EventHandler(this.btn_dssv_Click);
+            // 
+            // btn_previous
+            // 
+            this.btn_previous.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_previous.ForeColor = System.Drawing.Color.DarkGray;
+            this.btn_previous.Location = new System.Drawing.Point(34, 375);
+            this.btn_previous.Name = "btn_previous";
+            this.btn_previous.Size = new System.Drawing.Size(35, 28);
+            this.btn_previous.TabIndex = 23;
+            this.btn_previous.Text = "<<";
+            this.btn_previous.UseVisualStyleBackColor = true;
+            // 
+            // btn_next
+            // 
+            this.btn_next.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_next.ForeColor = System.Drawing.Color.DarkGray;
+            this.btn_next.Location = new System.Drawing.Point(160, 375);
+            this.btn_next.Name = "btn_next";
+            this.btn_next.Size = new System.Drawing.Size(38, 28);
+            this.btn_next.TabIndex = 22;
+            this.btn_next.Text = ">>";
+            this.btn_next.UseVisualStyleBackColor = true;
+            // 
+            // page
+            // 
+            this.page.AutoSize = true;
+            this.page.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.page.Location = new System.Drawing.Point(75, 385);
+            this.page.Name = "page";
+            this.page.Size = new System.Drawing.Size(79, 18);
+            this.page.TabIndex = 21;
+            this.page.Text = "Trang 1/1";
+            // 
             // frm_QLLH
             // 
             this.AcceptButton = this.btn_Search;
-            this.ClientSize = new System.Drawing.Size(900, 527);
+            this.ClientSize = new System.Drawing.Size(905, 627);
+            this.Controls.Add(this.btn_previous);
+            this.Controls.Add(this.btn_next);
+            this.Controls.Add(this.page);
+            this.Controls.Add(this.btn_dssv);
+            this.Controls.Add(this.link_qlsv);
+            this.Controls.Add(this.btn_SignOut);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.lblSearch);
             this.Controls.Add(this.txt_Search);
@@ -306,5 +388,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn monhoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn giangvien;
         private System.Windows.Forms.DataGridViewTextBoxColumn siso;
+        private System.Windows.Forms.Button btn_SignOut;
+        private System.Windows.Forms.LinkLabel link_qlsv;
+        private System.Windows.Forms.Button btn_dssv;
+        private System.Windows.Forms.Button btn_previous;
+        private System.Windows.Forms.Button btn_next;
+        private System.Windows.Forms.Label page;
     }
 }

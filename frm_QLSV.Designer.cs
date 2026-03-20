@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.dsSinhVien = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hoten = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gioitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ngaysinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.malop = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.searchhh = new System.Windows.Forms.Button();
@@ -40,19 +45,19 @@
             this.classs = new System.Windows.Forms.Label();
             this.txt_fullname = new System.Windows.Forms.TextBox();
             this.txt_gender = new System.Windows.Forms.TextBox();
-            this.txt_class = new System.Windows.Forms.TextBox();
             this.Add = new System.Windows.Forms.Button();
             this.Delete = new System.Windows.Forms.Button();
             this.Update = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.refreshhh = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.txt_class = new System.Windows.Forms.ComboBox();
             this.dtp_birthday = new System.Windows.Forms.DateTimePicker();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hoten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gioitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngaysinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.malop = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_SignOut = new System.Windows.Forms.Button();
+            this.link_qllh = new System.Windows.Forms.LinkLabel();
+            this.btn_previous = new System.Windows.Forms.Button();
+            this.btn_next = new System.Windows.Forms.Button();
+            this.page = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dsSinhVien)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -69,12 +74,52 @@
             this.gioitinh,
             this.ngaysinh,
             this.malop});
-            this.dsSinhVien.Location = new System.Drawing.Point(3, 102);
+            this.dsSinhVien.Location = new System.Drawing.Point(3, 88);
             this.dsSinhVien.Name = "dsSinhVien";
             this.dsSinhVien.RowHeadersWidth = 51;
             this.dsSinhVien.RowTemplate.Height = 24;
             this.dsSinhVien.Size = new System.Drawing.Size(664, 440);
             this.dsSinhVien.TabIndex = 0;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "MSSV";
+            this.id.MinimumWidth = 6;
+            this.id.Name = "id";
+            this.id.Width = 67;
+            // 
+            // hoten
+            // 
+            this.hoten.DataPropertyName = "hoten";
+            this.hoten.HeaderText = "Hoten";
+            this.hoten.MinimumWidth = 6;
+            this.hoten.Name = "hoten";
+            this.hoten.Width = 125;
+            // 
+            // gioitinh
+            // 
+            this.gioitinh.DataPropertyName = "gioitinh";
+            this.gioitinh.HeaderText = "Gioitinh";
+            this.gioitinh.MinimumWidth = 6;
+            this.gioitinh.Name = "gioitinh";
+            this.gioitinh.Width = 75;
+            // 
+            // ngaysinh
+            // 
+            this.ngaysinh.DataPropertyName = "ngaysinh";
+            this.ngaysinh.HeaderText = "Ngaysinh";
+            this.ngaysinh.MinimumWidth = 6;
+            this.ngaysinh.Name = "ngaysinh";
+            this.ngaysinh.Width = 102;
+            // 
+            // malop
+            // 
+            this.malop.DataPropertyName = "malop";
+            this.malop.HeaderText = "Malop";
+            this.malop.MinimumWidth = 6;
+            this.malop.Name = "malop";
+            this.malop.Width = 75;
             // 
             // label2
             // 
@@ -132,7 +177,7 @@
             // 
             this.birthdayyy.AutoSize = true;
             this.birthdayyy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.birthdayyy.Location = new System.Drawing.Point(43, 277);
+            this.birthdayyy.Location = new System.Drawing.Point(43, 273);
             this.birthdayyy.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.birthdayyy.Name = "birthdayyy";
             this.birthdayyy.Size = new System.Drawing.Size(66, 18);
@@ -184,14 +229,6 @@
             this.txt_gender.Name = "txt_gender";
             this.txt_gender.Size = new System.Drawing.Size(225, 24);
             this.txt_gender.TabIndex = 4;
-            // 
-            // txt_class
-            // 
-            this.txt_class.Location = new System.Drawing.Point(116, 331);
-            this.txt_class.Margin = new System.Windows.Forms.Padding(4);
-            this.txt_class.Name = "txt_class";
-            this.txt_class.Size = new System.Drawing.Size(225, 24);
-            this.txt_class.TabIndex = 6;
             // 
             // Add
             // 
@@ -264,13 +301,13 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.txt_class);
             this.splitContainer1.Panel1.Controls.Add(this.dtp_birthday);
             this.splitContainer1.Panel1.Controls.Add(this.refreshhh);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.Controls.Add(this.Update);
             this.splitContainer1.Panel1.Controls.Add(this.Delete);
             this.splitContainer1.Panel1.Controls.Add(this.Add);
-            this.splitContainer1.Panel1.Controls.Add(this.txt_class);
             this.splitContainer1.Panel1.Controls.Add(this.txt_gender);
             this.splitContainer1.Panel1.Controls.Add(this.txt_fullname);
             this.splitContainer1.Panel1.Controls.Add(this.classs);
@@ -283,68 +320,97 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.btn_previous);
+            this.splitContainer1.Panel2.Controls.Add(this.btn_next);
+            this.splitContainer1.Panel2.Controls.Add(this.page);
+            this.splitContainer1.Panel2.Controls.Add(this.btn_SignOut);
+            this.splitContainer1.Panel2.Controls.Add(this.link_qllh);
             this.splitContainer1.Panel2.Controls.Add(this.searchhh);
             this.splitContainer1.Panel2.Controls.Add(this.txt_search);
             this.splitContainer1.Panel2.Controls.Add(this.label2);
             this.splitContainer1.Panel2.Controls.Add(this.dsSinhVien);
-            this.splitContainer1.Size = new System.Drawing.Size(1067, 554);
-            this.splitContainer1.SplitterDistance = 392;
+            this.splitContainer1.Size = new System.Drawing.Size(1093, 570);
+            this.splitContainer1.SplitterDistance = 401;
             this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 0;
             // 
+            // txt_class
+            // 
+            this.txt_class.FormattingEnabled = true;
+            this.txt_class.Location = new System.Drawing.Point(116, 331);
+            this.txt_class.Name = "txt_class";
+            this.txt_class.Size = new System.Drawing.Size(225, 26);
+            this.txt_class.TabIndex = 13;
+            // 
             // dtp_birthday
             // 
-            this.dtp_birthday.Location = new System.Drawing.Point(116, 272);
+            this.dtp_birthday.Location = new System.Drawing.Point(116, 273);
             this.dtp_birthday.Name = "dtp_birthday";
             this.dtp_birthday.Size = new System.Drawing.Size(225, 24);
             this.dtp_birthday.TabIndex = 12;
             // 
-            // id
+            // btn_SignOut
             // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "MSSV";
-            this.id.MinimumWidth = 6;
-            this.id.Name = "id";
-            this.id.Width = 67;
+            this.btn_SignOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SignOut.ForeColor = System.Drawing.Color.Red;
+            this.btn_SignOut.Location = new System.Drawing.Point(542, 44);
+            this.btn_SignOut.Name = "btn_SignOut";
+            this.btn_SignOut.Size = new System.Drawing.Size(125, 33);
+            this.btn_SignOut.TabIndex = 5;
+            this.btn_SignOut.Text = "Đăng Xuất";
+            this.btn_SignOut.UseVisualStyleBackColor = true;
+            this.btn_SignOut.Click += new System.EventHandler(this.btn_SignOut_Click);
             // 
-            // hoten
+            // link_qllh
             // 
-            this.hoten.DataPropertyName = "hoten";
-            this.hoten.HeaderText = "Hoten";
-            this.hoten.MinimumWidth = 6;
-            this.hoten.Name = "hoten";
-            this.hoten.Width = 125;
+            this.link_qllh.AutoSize = true;
+            this.link_qllh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.link_qllh.Location = new System.Drawing.Point(505, 531);
+            this.link_qllh.Name = "link_qllh";
+            this.link_qllh.Size = new System.Drawing.Size(140, 20);
+            this.link_qllh.TabIndex = 4;
+            this.link_qllh.TabStop = true;
+            this.link_qllh.Text = "Quản lý lớp học";
+            this.link_qllh.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_qllh_LinkClicked);
             // 
-            // gioitinh
+            // btn_previous
             // 
-            this.gioitinh.DataPropertyName = "gioitinh";
-            this.gioitinh.HeaderText = "Gioitinh";
-            this.gioitinh.MinimumWidth = 6;
-            this.gioitinh.Name = "gioitinh";
-            this.gioitinh.Width = 75;
+            this.btn_previous.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_previous.ForeColor = System.Drawing.Color.DarkGray;
+            this.btn_previous.Location = new System.Drawing.Point(3, 537);
+            this.btn_previous.Name = "btn_previous";
+            this.btn_previous.Size = new System.Drawing.Size(45, 33);
+            this.btn_previous.TabIndex = 26;
+            this.btn_previous.Text = "<<";
+            this.btn_previous.UseVisualStyleBackColor = true;
             // 
-            // ngaysinh
+            // btn_next
             // 
-            this.ngaysinh.DataPropertyName = "ngaysinh";
-            this.ngaysinh.HeaderText = "Ngaysinh";
-            this.ngaysinh.MinimumWidth = 6;
-            this.ngaysinh.Name = "ngaysinh";
-            this.ngaysinh.Width = 102;
+            this.btn_next.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_next.ForeColor = System.Drawing.Color.DarkGray;
+            this.btn_next.Location = new System.Drawing.Point(160, 538);
+            this.btn_next.Name = "btn_next";
+            this.btn_next.Size = new System.Drawing.Size(45, 33);
+            this.btn_next.TabIndex = 25;
+            this.btn_next.Text = ">>";
+            this.btn_next.UseVisualStyleBackColor = true;
             // 
-            // malop
+            // page
             // 
-            this.malop.DataPropertyName = "malop";
-            this.malop.HeaderText = "Malop";
-            this.malop.MinimumWidth = 6;
-            this.malop.Name = "malop";
-            this.malop.Width = 75;
+            this.page.AutoSize = true;
+            this.page.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.page.Location = new System.Drawing.Point(54, 545);
+            this.page.Name = "page";
+            this.page.Size = new System.Drawing.Size(79, 18);
+            this.page.TabIndex = 24;
+            this.page.Text = "Trang 1/1";
             // 
             // frm_QLSV
             // 
             this.AcceptButton = this.searchhh;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(1093, 570);
             this.Controls.Add(this.splitContainer1);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
@@ -378,7 +444,6 @@
         private System.Windows.Forms.Label classs;
         private System.Windows.Forms.TextBox txt_fullname;
         private System.Windows.Forms.TextBox txt_gender;
-        private System.Windows.Forms.TextBox txt_class;
         private System.Windows.Forms.Button Add;
         private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.Button Update;
@@ -391,5 +456,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gioitinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn ngaysinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn malop;
+        private System.Windows.Forms.Button btn_SignOut;
+        private System.Windows.Forms.LinkLabel link_qllh;
+        private System.Windows.Forms.ComboBox txt_class;
+        private System.Windows.Forms.Button btn_previous;
+        private System.Windows.Forms.Button btn_next;
+        private System.Windows.Forms.Label page;
     }
 }
